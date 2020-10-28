@@ -5,6 +5,7 @@ var  proEdit = Vue.component('proEdit' ,
  { 
   props: ['prod','sum'] ,
   template:  ` <div class="product" >
+  Hello
   </div> `  ,
   data() {
       return {  
@@ -35,4 +36,4 @@ methods:{
    
      }
 })
-/**********************************************
+/**********************************************/
