@@ -5,13 +5,13 @@ var  proEdit = Vue.component('proEdit' ,
  { 
   props: ['prod','sum'] ,
   template:  ` <div class="product" >
-  {{checked}}
+  {{checked}} <br> Hello ! {{pinfo}}
   </div> `  ,
   data() {
       return {  
             checked: false,
             records:'proEdit',
-            pinfo:'',
+            pinfo:'E23048',
             tot:{} 
                }
  },
@@ -28,13 +28,16 @@ methods:{
                       }).catch(function (error) {
                         console.log(error);
                             });
-    this.tm = false ; 
-    this.stat1 = "New Transation completed !" ;
-    console.log(mn) ;
-         // const words = mn.split('-');
-         // mn = words[0] ;
-      } 
-   
+            },
+    get_info:    function (passdata){
+        let url2 = './src/php/product/product.php?acc='
+        axios.get(url2).then(function(response){
+           console.log(url2) ;
+                      }) .catch(function(error){ console.log(error) ; }) ; 
+        }                     
+      // const words = mn.split('-');
+      // mn = words[0] ;
+    
      }
 })
 /**********************************************/
