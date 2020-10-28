@@ -5,7 +5,7 @@ var  proEdit = Vue.component('proEdit' ,
  { 
   props: ['prod','sum'] ,
   template:  ` <div class="product" >
-  Hello
+  {{checked}}
   </div> `  ,
   data() {
       return {  
