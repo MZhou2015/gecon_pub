@@ -10,12 +10,13 @@ var  proEdit = Vue.component('proEdit' ,
   data() {
       return {  
             checked: false,
-            records:'',
+            records:'proEdit',
             pinfo:'',
             tot:{} 
                }
  },
 mounted: function(){
+    console.log(this.records);
     let passdata = this.pinfo ;
    this.postfor_update(passdata)
 },
