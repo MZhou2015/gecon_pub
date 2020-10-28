@@ -18,7 +18,7 @@ var  proEdit = Vue.component('proEdit' ,
 mounted: function(){
     console.log(this.records);
     let passdata = this.pinfo ;
-   this.postfor_update(passdata)
+   this.get_info(passdata)
 },
 methods:{
     postfor_update: function (passdata){
@@ -30,7 +30,7 @@ methods:{
                             });
             },
     get_info:    function (passdata){
-        let url2 = './src/php/product/product.php?acc='
+        let url2 = './src/php/product/product_edit.php?act=list'
         axios.get(url2).then(function(response){
            console.log(url2) ;
                       }) .catch(function(error){ console.log(error) ; }) ; 
