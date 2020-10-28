@@ -8,10 +8,11 @@ var  proEdit = Vue.component('proEdit' ,
   {{checked}} <br> Hello ! {{pinfo}}
   <h2>  Gecon Product List</h2>                       
      <table class="tgc1">
-     <caption> all product list for website  {{ getproduc}} </caption>
+     <caption> all product list for website </caption>
      <tr><th>Item</th><th>Model</th><th>profit in 2020å¹´</th><th>Qty in 2020å¹´ </th><th>æœ€è¿‘3ä¸ªæœˆ</th><th>è¿‘1ä¸ªæœˆ &nbsp;&nbsp;</th><th>çŽ°åº“å­˜&nbsp;</th></tr>
 
-     <tr v-for= "(item, index ) in cab.list" ><th>{{index +1 }}</th><td>{{item.ptcode}}</td><td>{{item.name}}</td><td>{{item.model}}</td></tr>
+     <tr v-for= "(item, index ) in cab.list" ><th>{{index +1 }}</th><td>{{item.ptcode}}</td><td>{{item.name}}</td>
+                                              <td>{{item.model}}</td><td>{{item.price}}</td><td>{{item.shipping}}</td></tr>
      </table>
 
   </div> `  ,
