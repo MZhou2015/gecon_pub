@@ -5,7 +5,7 @@ var  proEdit = Vue.component('proEdit' ,
  { 
   props: ['prod','cab'] ,
   template:  ` <div class="product" >
-  {{checked}} <br> Hello ! {{pinfo}}
+  {{cab}} <br> Hello ! {{pinfo}}
   <h2>  Gecon Product List</h2>                       
      <table class="tgc1">
      <caption> all product list for website </caption>
