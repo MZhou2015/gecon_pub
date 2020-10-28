@@ -3,9 +3,17 @@
 /******************************************************************************************/
 var  proEdit = Vue.component('proEdit' , 
  { 
-  props: ['prod','sum'] ,
+  props: ['prod','cab'] ,
   template:  ` <div class="product" >
   {{checked}} <br> Hello ! {{pinfo}}
+  <h2>  Gecon Product List</h2>                       
+     <table class="tgc1">
+     <caption> all product list for website  {{ getproduc}} </caption>
+     <tr><th>Item</th><th>Model</th><th>profit in 2020å¹´</th><th>Qty in 2020å¹´ </th><th>æœ€è¿‘3ä¸ªæœˆ</th><th>è¿‘1ä¸ªæœˆ &nbsp;&nbsp;</th><th>çŽ°åº“å­˜&nbsp;</th></tr>
+
+     <tr v-for= "(item, index ) in cab.list" ><th>{{index +1 }}</th><td>{{item.ptcode}}</td><td>{{item.name}}</td><td>{{item.model}}</td></tr>
+     </table>
+
   </div> `  ,
   data() {
       return {  
@@ -24,7 +32,7 @@ methods:{
     postfor_update: function (passdata){
         let url = './src/php/db_write.php'; 
         axios.post(url, JSON.stringify(passdata)).then(function (response) {
-                        console.log(response.data);
+          app.amp = response.data ;       console.log(response.data);
                       }).catch(function (error) {
                         console.log(error);
                             });
