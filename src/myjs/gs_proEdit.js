@@ -9,9 +9,9 @@ var  proEdit = Vue.component('proEdit' ,
   <h2>  Gecon Product List</h2>                       
      <table class="tgc1">
      <caption> all product list for website </caption>
-     <tr><th>Item</th><th>Model</th><th>profit in 2020å¹´</th><th>Qty in 2020å¹´ </th><th>æœ€è¿‘3ä¸ªæœˆ</th><th>è¿‘1ä¸ªæœˆ &nbsp;&nbsp;</th><th>çŽ°åº“å­˜&nbsp;</th></tr>
+     <tr><th>Item</th><th>Ptcode</th><th>Product Name</th><th>Model</th><th>Price</th><th>Shipping Cost</th><th>Cost &nbsp;</th></tr>
 
-     <tr v-for= "(item, index ) in cab.list" ><th>{{index +1 }}</th><td>{{item.ptcode}}</td><td>{{item.name}}</td>
+     <tr v-for= "(item, index ) in cab.list" ><th>{{index +1 }}</th><td><router-link :to="rout + item.ptcode " > {{item.ptcode}} </router-link></td><td>{{item.name}}</td>
                                               <td>{{item.model}}</td><td>{{item.price}}</td><td>{{item.shipping}}</td></tr>
      </table>
 
@@ -21,6 +21,7 @@ var  proEdit = Vue.component('proEdit' ,
             checked: false,
             records:'proEdit',
             pinfo:'E23048',
+            rout:'/proEdit/',
             tot:{} 
                }
  },
