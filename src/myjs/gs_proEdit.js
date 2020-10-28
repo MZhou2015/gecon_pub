@@ -41,7 +41,7 @@ methods:{
     get_info:    function (passdata){
         let url2 = './src/php/product/product_edit.php?act=list'
         axios.get(url2).then(function (response) {
-           console.log(response.data) ;
+           console.log(response.data) ;app.amp = response.data ;
                       }) .catch(function(error){ console.log(error) ; }) ; 
         }                     
       // const words = mn.split('-');
