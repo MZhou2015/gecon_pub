@@ -3,7 +3,7 @@
 /******************************************************************************************/
 var  proEdit = Vue.component('proEdit' , 
  { 
-  props: ['prod','cab'] ,
+  props: ['cab','prod'] ,
   template:  ` <div class="product" >
   {{cab}} <br> Hello ! {{pinfo}}
   <h2>  Gecon Product List</h2>                       
@@ -33,7 +33,7 @@ methods:{
     postfor_update: function (passdata){
         let url = './src/php/db_write.php'; 
         axios.post(url, JSON.stringify(passdata)).then(function (response) {
-          app.amp = response.data ;       console.log(response.data);
+          app.amp = response.data ;       console.log(app.amp);
                       }).catch(function (error) {
                         console.log(error);
                             });
