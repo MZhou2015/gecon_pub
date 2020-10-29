@@ -44,6 +44,7 @@ mounted: function(){
     let passdata = this.pinfo ;
    this.get_info(passdata)
    this.maxd = this.cab.list
+   console.log(this.maxd) ;
 },
 methods:{
     postfor_update: function (passdata){
