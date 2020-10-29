@@ -5,13 +5,14 @@ var  proEdit = Vue.component('proEdit' ,
  { 
   props: ['cab','prod'] ,
   template:  ` <div class="product" >
-   <br> Hello ! {{pinfo}}
+   <br> Hello ! {{pinfo}}   This prodcut id:  {{id}}
+   <input type="text" class="form1" v-model="pinfo" placeholder="Edit me here">
   <h2>  Gecon Product List</h2>                       
      <table class="tgc1">
      <caption> all product list for website </caption>
      <tr><th>Item</th><th>Ptcode</th><th>Product Name</th><th>Model</th><th>Price</th><th>Shipping Cost</th><th>Cost &nbsp;</th></tr>
 
-     <tr v-for= "(item, index ) in cab.list" ><th>{{index +1 }}</th><td><router-link :to="rout + item.ptcode " > {{item.ptcode}} </router-link></td><td>{{item.name}}</td>
+     <tr v-for= "(item, index ) in cab.list" ><th>{{index +1 }}</th><td><router-link :to="rout + index" > {{item.ptcode}} </router-link></td><td>{{item.name}}</td>
                                               <td>{{item.model}}</td><td>{{item.price}}</td><td>{{item.shipping}}</td></tr>
      </table>
 
@@ -21,10 +22,16 @@ var  proEdit = Vue.component('proEdit' ,
             checked: false,
             records:'proEdit',
             id: 2 ,
+            maxd:[],
             pinfo:'E23048',
             rout:'/proEdit/',
             tot:{} 
                }
+ },
+ beforeRouteUpdate(to,from,next) {
+  let val = to.params.pid
+  this.id  = val 
+  next();
  },
 mounted: function(){
     console.log(this.records);
@@ -32,6 +39,7 @@ mounted: function(){
     console.log(this.$route.params.pid) ;
     let passdata = this.pinfo ;
    this.get_info(passdata)
+   this.maxd = this.cad
 },
 methods:{
     postfor_update: function (passdata){
