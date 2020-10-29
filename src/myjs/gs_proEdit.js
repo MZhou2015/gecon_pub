@@ -5,7 +5,7 @@ var  proEdit = Vue.component('proEdit' ,
  { 
   props: ['cab','prod'] ,
   template:  ` <div class="product" >
-  {{cab}} <br> Hello ! {{pinfo}}
+   <br> Hello ! {{pinfo}}
   <h2>  Gecon Product List</h2>                       
      <table class="tgc1">
      <caption> all product list for website </caption>
@@ -20,6 +20,7 @@ var  proEdit = Vue.component('proEdit' ,
       return {  
             checked: false,
             records:'proEdit',
+            id: 2 ,
             pinfo:'E23048',
             rout:'/proEdit/',
             tot:{} 
@@ -27,6 +28,8 @@ var  proEdit = Vue.component('proEdit' ,
  },
 mounted: function(){
     console.log(this.records);
+    this.id = this.$route.params.pid
+    console.log(this.$route.params.pid) ;
     let passdata = this.pinfo ;
    this.get_info(passdata)
 },
