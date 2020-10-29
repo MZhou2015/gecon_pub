@@ -4,7 +4,7 @@
 var  proEdit = Vue.component('proEdit' , 
  { 
   props: ['cab','prod'] ,
-  template:  ` <div class="product" >
+  template:  ` <div class="product" v-if="checked" >
    <br> Hello ! {{pinfo}}   This prodcut id:  {{id}} {{mitx}} and {{maxd}}  {{age}}
    <div class="petty" >
       <label >Product No:   &nbsp;&nbsp; {{maxd.ptcode}}</label> 
@@ -61,6 +61,7 @@ methods:{
             },
     saveinvar: function (mvar){
       console.log(mvar) ;
+      this.checked = true 
       this.age++
         this.maxd = mvar;
             },
