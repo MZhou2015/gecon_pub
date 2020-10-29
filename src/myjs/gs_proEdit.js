@@ -4,9 +4,9 @@
 var  proEdit = Vue.component('proEdit' , 
  { 
   props: ['cab','prod'] ,
-  template:  ` <div class="product" v-if="checked" >
+  template:  ` <div class="product"  >
    <br> Hello ! {{pinfo}}   This prodcut id:  {{id}} {{mitx}} and {{maxd}}  {{age}}
-   <div class="petty" >
+   <div class="petty" v-if="checked" >
       <label >Product No:   &nbsp;&nbsp; {{maxd.ptcode}}</label> 
       <label >Product Name:  &nbsp;&nbsp; </label>  <input type="text" class="prinf1" v-model="maxd.name" >
       <label >Product Model: &nbsp;&nbsp; </label>  <input type="text" class="prinf1" v-model="maxd.model">
@@ -47,9 +47,7 @@ mounted: function(){
     console.log(this.$route.params.pid) ;
     let passdata = this.pinfo ;
    this.get_info(passdata)
-   this.maxd = this.cab.list
-   console.log(this.maxd) ;
-},
+  },
 methods:{
     postfor_update: function (passdata){
         let url = './src/php/db_write.php'; 
