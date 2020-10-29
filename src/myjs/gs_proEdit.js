@@ -5,7 +5,7 @@ var  proEdit = Vue.component('proEdit' ,
  { 
   props: ['cab','prod'] ,
   template:  ` <div class="product" >
-   <br> Hello ! {{pinfo}}   This prodcut id:  {{id}} {{mitx}} and {{maxd}}
+   <br> Hello ! {{pinfo}}   This prodcut id:  {{id}} {{mitx}} and {{maxd}}  {{age}}
    <div class="petty" >
    <input type="text" class="prinf1" v-model="pinfo" >
        </div>
@@ -14,7 +14,7 @@ var  proEdit = Vue.component('proEdit' ,
      <caption> all product list for website </caption>
      <tr><th>Item</th><th>Ptcode</th><th>Product Name</th><th>Model</th><th>Price</th><th>Shipping Cost</th><th>Cost &nbsp;</th></tr>
 
-     <tr v-for= "(item, index ) in cab.list" ><th>{{index +1 }}</th><td><router-link :to="rout + index" @click="saveinvar(item)" > {{item.ptcode}} </router-link></td><td>{{item.name}}</td>
+     <tr v-for= "(item, index ) in cab.list" ><th>{{index +1 }}</th><td><router-link :to="rout + index" v-on:click="age++" > {{item.ptcode}} </router-link></td><td>{{item.name}}</td>
                                               <td>{{item.model}}</td><td>{{item.price}}</td><td>{{item.shipping}}</td></tr>
      </table>
 
@@ -24,6 +24,7 @@ var  proEdit = Vue.component('proEdit' ,
             checked: false,
             records:'proEdit',
             id: 2 ,
+            age:12
             mitx:{},
             maxd:[],
             pinfo:'E23048',
