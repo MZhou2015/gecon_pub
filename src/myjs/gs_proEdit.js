@@ -5,7 +5,7 @@ var  proEdit = Vue.component('proEdit' ,
  { 
   props: ['cab','prod'] ,
   template:  ` <div class="product" >
-   <br> Hello ! {{pinfo}}   This prodcut id:  {{id}} {{mitx}}
+   <br> Hello ! {{pinfo}}   This prodcut id:  {{id}} {{mitx}} and {{maxd}}
    <div class="petty" >
    <input type="text" class="prinf1" v-model="pinfo" >
        </div>
@@ -14,7 +14,7 @@ var  proEdit = Vue.component('proEdit' ,
      <caption> all product list for website </caption>
      <tr><th>Item</th><th>Ptcode</th><th>Product Name</th><th>Model</th><th>Price</th><th>Shipping Cost</th><th>Cost &nbsp;</th></tr>
 
-     <tr v-for= "(item, index ) in cab.list" ><th>{{index +1 }}</th><td><router-link :to="rout + index" > {{item.ptcode}} </router-link></td><td>{{item.name}}</td>
+     <tr v-for= "(item, index ) in cab.list" ><th>{{index +1 }}</th><td><router-link :to="rout + index" @click="saveinvar(item)" > {{item.ptcode}} </router-link></td><td>{{item.name}}</td>
                                               <td>{{item.model}}</td><td>{{item.price}}</td><td>{{item.shipping}}</td></tr>
      </table>
 
@@ -34,6 +34,7 @@ var  proEdit = Vue.component('proEdit' ,
  beforeRouteUpdate(to,from,next) {
   let val = to.params.pid
   this.id  = val 
+  console.log(this.maxd) ;
   this.mitx = this.maxd[val]
   next();
  },
@@ -55,12 +56,15 @@ methods:{
                         console.log(error);
                             });
             },
-    get_info:    function (passdata){
+    get_info: function (passdata){
         let url2 = './src/php/product/product_edit.php?act=list'
         axios.get(url2).then(function (response) {
            console.log(response.data) ;app.amp = response.data ;
                       }) .catch(function(error){ console.log(error) ; }) ; 
-        }                     
+        }, 
+        saveinvar: function (mvar){
+            this.maxd = mvar
+        }           
       // const words = mn.split('-');
       // mn = words[0] ;
     
