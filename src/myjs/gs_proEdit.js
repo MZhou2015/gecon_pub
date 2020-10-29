@@ -24,7 +24,7 @@ var  proEdit = Vue.component('proEdit' ,
             checked: false,
             records:'proEdit',
             id: 2 ,
-            age:12
+            age:12,
             mitx:{},
             maxd:[],
             pinfo:'E23048',
