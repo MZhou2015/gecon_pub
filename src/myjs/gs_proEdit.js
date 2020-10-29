@@ -34,9 +34,7 @@ var  proEdit = Vue.component('proEdit' ,
  beforeRouteUpdate(to,from,next) {
   let val = to.params.pid
   this.id  = val 
-  console.log(this.maxd) ;
-  this.mitx = this.maxd[val]
-  next();
+    next();
  },
 mounted: function(){
     console.log(this.records);
@@ -56,15 +54,16 @@ methods:{
                         console.log(error);
                             });
             },
+    saveinvar: function (mvar){
+      console.log(mvar) ;
+        this.maxd = mvar;
+            },
     get_info: function (passdata){
         let url2 = './src/php/product/product_edit.php?act=list'
         axios.get(url2).then(function (response) {
            console.log(response.data) ;app.amp = response.data ;
                       }) .catch(function(error){ console.log(error) ; }) ; 
-        }, 
-        saveinvar: function (mvar){
-            this.maxd = mvar
-        }           
+        }
       // const words = mn.split('-');
       // mn = words[0] ;
     
