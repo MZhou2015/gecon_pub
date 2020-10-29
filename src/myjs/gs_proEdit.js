@@ -43,7 +43,7 @@ mounted: function(){
     console.log(this.$route.params.pid) ;
     let passdata = this.pinfo ;
    this.get_info(passdata)
-   this.maxd = this.cad
+   this.maxd = this.cad.list
 },
 methods:{
     postfor_update: function (passdata){
