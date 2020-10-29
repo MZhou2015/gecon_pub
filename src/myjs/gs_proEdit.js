@@ -5,8 +5,10 @@ var  proEdit = Vue.component('proEdit' ,
  { 
   props: ['cab','prod'] ,
   template:  ` <div class="product" >
-   <br> Hello ! {{pinfo}}   This prodcut id:  {{id}}
-   <input type="text" class="form1" v-model="pinfo" placeholder="Edit me here">
+   <br> Hello ! {{pinfo}}   This prodcut id:  {{id}} {{mitx}}
+   <div class="petty" >
+   <input type="text" class="prinf1" v-model="pinfo" >
+       </div>
   <h2>  Gecon Product List</h2>                       
      <table class="tgc1">
      <caption> all product list for website </caption>
@@ -22,6 +24,7 @@ var  proEdit = Vue.component('proEdit' ,
             checked: false,
             records:'proEdit',
             id: 2 ,
+            mitx:{},
             maxd:[],
             pinfo:'E23048',
             rout:'/proEdit/',
@@ -31,6 +34,7 @@ var  proEdit = Vue.component('proEdit' ,
  beforeRouteUpdate(to,from,next) {
   let val = to.params.pid
   this.id  = val 
+  this.mitx = this.maxd[val]
   next();
  },
 mounted: function(){
