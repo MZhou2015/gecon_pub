@@ -7,7 +7,11 @@ var  proEdit = Vue.component('proEdit' ,
   template:  ` <div class="product" >
    <br> Hello ! {{pinfo}}   This prodcut id:  {{id}} {{mitx}} and {{maxd}}  {{age}}
    <div class="petty" >
-   <input type="text" class="prinf1" v-model="pinfo" >
+      <label >Product No:   &nbsp;&nbsp; {{maxd.ptcode}}</label> 
+      <label >Product Name:  &nbsp;&nbsp; </label>  <input type="text" class="prinf1" v-model="maxd.name" >
+      <label >Product Model: &nbsp;&nbsp; </label>  <input type="text" class="prinf1" v-model="maxd.model">
+      <input type="text" class="prinf1" v-model="pinfo" >
+      <button v-on:click="age++" > Update</button> 
        </div>
   <h2>  Gecon Product List</h2>                       
      <table class="tgc1">
