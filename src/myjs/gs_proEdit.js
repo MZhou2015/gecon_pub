@@ -52,7 +52,7 @@ mounted: function(){
   },
 methods:{
     postfor_update: function (passdata){
-        let url = './src/php/product/product_edit.php?act=fgrhyu36'; 
+        let url = './src/php/product/product_edit.php?act=POST'; 
         axios.post(url, JSON.stringify(passdata)).then(function (response) {
           app.jsdd = response.data ;       console.log(app.jsdd);
                       }).catch(function (error) {
