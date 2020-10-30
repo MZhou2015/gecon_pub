@@ -7,12 +7,12 @@ var  proEdit = Vue.component('proEdit' ,
   template:  ` <div class="product"  >
       <div class="petty" v-if="checked" >
       <table>
-      <tr><label >Product No:   &nbsp;&nbsp;</label></td><td> {{maxd.ptcode}} </td></tr>
-      <tr><label >Product Name:  &nbsp;&nbsp; </label> </td><td> <input type="text" class="prinf1" v-model="maxd.name" > </td></tr>
+      <tr><td><label >Product No:   &nbsp;&nbsp;</label></td><td> {{maxd.ptcode}} </td></tr>
+      <tr><td><label >Product Name:  &nbsp;&nbsp; </label> </td><td> <input type="text" class="prinf1" v-model="maxd.name" > </td></tr>
       <tr><td><label >Product Model: &nbsp;&nbsp; </label></td><td>  <input type="text" class="prinf1" v-model="maxd.model"> </td></tr>
       <tr><td><label >Product Price:  &nbsp;&nbsp; </label></td><td><input type="text" class="prinf1" v-model="maxd.price" ></td></tr>
       <tr><td><label >Category  &nbsp;&nbsp; </label></td><td><input type="text" class="prinf1" v-model="maxd.catalog" ></td></tr>
-      <tr><td>&nbsp;&nbsp; {{age}}  </td><td><button   class="btncls" v-on:click="age++" > Update</button> </td></tr>
+      <tr><td>&nbsp;&nbsp; {{prod}}  </td><td><button   class="btncls" v-on:click="postfor_update(maxd)" > Update</button> </td></tr>
       </table> 
       </div>
   <h2>  Gecon Product List</h2>                       
@@ -52,9 +52,9 @@ mounted: function(){
   },
 methods:{
     postfor_update: function (passdata){
-        let url = './src/php/db_write.php'; 
+        let url = './src/php/product/product_edit.php?act=fgrhyu36'; 
         axios.post(url, JSON.stringify(passdata)).then(function (response) {
-          app.amp = response.data ;       console.log(app.amp);
+          app.jsdd = response.data ;       console.log(app.jsdd);
                       }).catch(function (error) {
                         console.log(error);
                             });
