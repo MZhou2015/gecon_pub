@@ -7,12 +7,14 @@ var  proEdit = Vue.component('proEdit' ,
   template:  ` <div class="product"  >
    <br> Hello ! {{pinfo}}   This prodcut id:  {{id}} {{mitx}} and {{maxd}}  {{age}}
    <div class="petty" v-if="checked" >
-      <label >Product No:   &nbsp;&nbsp; {{maxd.ptcode}}</label> 
-      <label >Product Name:  &nbsp;&nbsp; </label>  <input type="text" class="prinf1" v-model="maxd.name" >
-      <label >Product Model: &nbsp;&nbsp; </label>  <input type="text" class="prinf1" v-model="maxd.model">
-      <input type="text" class="prinf1" v-model="pinfo" >
-      <button v-on:click="age++" > Update</button> 
-       </div>
+      <table>
+      <tr><label >Product No:   &nbsp;&nbsp;</td><td> {{maxd.ptcode}}</label> </td></tr>
+      <tr><label >Product Name:  &nbsp;&nbsp; </label> </td><td> <input type="text" class="prinf1" v-model="maxd.name" > </td></tr>
+      <tr><td><label >Product Model: &nbsp;&nbsp; </label></td><td>  <input type="text" class="prinf1" v-model="maxd.model"> </td></tr>
+      <tr><td><label >Product Price:  &nbsp;&nbsp; </label></td><td><input type="text" class="prinf1" v-model="maxd.price" ></td></tr>
+      <tr><td></td><td><button v-on:click="age++" > Update</button> </td></tr>
+      </table> 
+      </div>
   <h2>  Gecon Product List</h2>                       
      <table class="tgc1">
      <caption> all product list for website </caption>
