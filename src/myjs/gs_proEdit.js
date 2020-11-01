@@ -12,7 +12,7 @@ var  proEdit = Vue.component('proEdit' ,
       <tr><td><label >Product Model: &nbsp;&nbsp; </label></td><td>  <input type="text" class="prinf1" v-model="maxd.model"> </td></tr>
       <tr><td><label >Product Price:  &nbsp;&nbsp; </label></td><td><input type="text" class="prinf1" v-model="maxd.price" ></td></tr>
       <tr><td><label >Category  &nbsp;&nbsp; </label></td><td><input type="text" class="prinf1" v-model="maxd.catalog" ></td></tr>
-      <tr><td><label >Brief  &nbsp;&nbsp; </label></td><td><textarea class="prinf1"  rows="4" cols="50" v-model="maxd.brief"></textarea></td></tr>
+      <tr><td><label >Brief  &nbsp;&nbsp; </label></td><td><textarea class="prinf1"  rows="4" cols="50" v-model="maxd.brief">{{maxd.brief}}</textarea></td></tr>
       <tr><td>&nbsp;&nbsp; {{prod}}  </td><td><button   class="btncls" v-on:click="postfor_update(maxd)" > Update</button> </td></tr>
       </table> 
       </div>
