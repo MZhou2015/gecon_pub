@@ -22,10 +22,12 @@ var  proEdit = Vue.component('proEdit' ,
   <h2>  Gecon Product List</h2>                       
      <table class="tgc1">
      <caption> all product list for website </caption>
-     <tr><th>Item</th><th>Ptcode</th><th>Product Name</th><th>Model</th><th>Price</th><th>Image &nbsp;</th><th>Shipping Cost</th><th>Select&nbsp;</th></tr>
+     <tr><th>Item</th><th>Ptcode</th><th>Product Name</th><th>Model</th><th>Price</th><th>Image &nbsp;</th><th>Brief</th>
+     <th>Descriotion &nbsp;</th><th>note</th><th>Select&nbsp;</th></tr>
 
      <tr v-for= "(item, index ) in cab.list" ><th>{{index +1 }}</th><td><router-link :to="rout + index" v-on:click="age++" > {{item.ptcode}} </router-link></td><td>{{item.name}}</td>
-     <td>{{item.model}}</td><td>{{item.price}}</td><td>{{item.image}}</td><td>{{item.brief}}</td><td><button v-on:click="saveinvar(item)" > Click</button> </td></tr>
+     <td>{{item.model}}</td><td>{{item.price}}</td><td>{{item.image}}</td><td>{{item.brief}}</td>
+     <td>&nbsp;&nbsp;&nbsp;</td> <td>{{item.note}}</td>   <td><button v-on:click="saveinvar(item)" > Click</button> </td></tr>
      </table>
 
   </div> `  ,
