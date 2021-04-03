@@ -1,0 +1,12 @@
+{
+    "ptcode": "E11010",
+    "model": "DSP-100",
+    "image": "k10020170315b.jpg",
+    "brief": "Professional Karaoke Mixer ",
+    "rprice": "180.00",
+    "pname": "Professional Digital Mixer",
+    "descrp": {
+        "here": true,
+        "feature": ["erb with stereo inputs and outputs","Easy to read 2 digit LED display", "Compact 1 U rack - mount dimensions"]
+    }
+} 
