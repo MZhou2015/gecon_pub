@@ -1,0 +1,80 @@
+/*****************    General CSS   for all templete     *******************/
+.template{
+color: #121252;
+font-weight: 600;
+}
+.template caption {
+    caption-side: top;
+    text-align: center;
+  }
+/****************************************************/  
+.myclass1 {
+    color: red;
+    border: 1px solid blue;
+}
+.mbox {
+    background-color: rgb(166, 201, 157); 
+}
+.hm1{background-color: #595a6e; text-align: left; padding: 0px; margin: 0px; height: 50px;}
+.cap1{padding: 8px 0 5px 0; background-color: #FFFACD;
+    font: italic 18px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    text-align:  center ;
+}
+.pbackg{ background-color: #8d9687; padding: 0;}
+/* Main CSS */
+body {
+    margin:  0;
+    padding-bottom: 0px;
+    border:  0;
+    position: relative;
+    min-height: 100vh;
+    }
+ .nav-tabs .nav-link{
+     background-color: #dbdbc7;
+     margin-right: 3px;
+ }
+ .nav-tabs .nav-link.active {
+    margin-right: 3px;
+}
+.tbtt2{ font-size:22px; padding:6px; color:#000; font-weight:bold; text-align: center;
+    background-color :#CD853F;
+    opacity: 0.5;
+   }
+.tbtt1{ font-size:16px; padding:3px; margin-bottom:7px; color:rgb(48, 56, 71); font-weight:bold; text-align: center;
+    background-color :#e4d86f;
+    opacity: 0.8;
+   }
+caption {   padding: 8px 0 5px 0; background-color: #FFFACD;
+          font: italic 18px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+          text-align:  center ;
+   }
+table.tgc1 {width: 100%; background-color: #FDF5E6;}
+table.tgc1 td{  background-color: #7C9381; text-align:left;padding:8px; margin: 2px;
+              border-right: 1px solid #C1DAD7;
+              border-bottom: 1px solid #C1DAD7;
+   }
+table.tgc1 th {
+  font: bold 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+  color: #595a6e;
+  border-right: 1px solid #C1DAD7;
+  border-bottom: 1px solid #C1DAD7;
+  border-top: 1px solid #C1DAD7;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 6px 6px 6px 12px;
+  background: #dba670;
+  }
+  table.order1 {
+    width: 100%; background-color: #FDF5E6;
+    font: 300 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+  }
+  table.order1 th{
+    font: bold 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    background-color: #e9d9bb;
+   }
+   /*********  global CSS      **/
+   table.vbl { width: 100%; background-color: rgb(203, 211, 211); }
+.sd1{ width: 100%; margin-left: 0px; background-color: #cfc3b6;}
+.sd1 td{padding: 6px; font-size: 14px;font-weight: 550;}
+.esd{background-color: #cfc3da; }
