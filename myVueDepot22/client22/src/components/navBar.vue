@@ -4,8 +4,8 @@
          <li><a href="./">DashBoard</a></li>
          <li><router-link to="./webacc" >Webaccounting</router-link>
             <ul>
-                <li><router-link to="/generalentry" >General Entry</router-link></li>
                 <li><router-link to="/finreport" >Finance Report</router-link></li>
+                <li><router-link to="/generals" >General Entry</router-link></li>
             </ul>
           </li>
            <li><a href="/about">Investment</a>
@@ -14,18 +14,47 @@
                 <li><router-link to="/finreport" >Finance Report</router-link></li>
               </ul>
           </li>
-          <li><a href="/about">Sales</a></li>
+          <li><router-link to="/orderlist" >Sales</router-link></li>
           <li><a href="/about">Logout</a></li>
        </ul>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'navBar',
   data () {
     return {
-      msg: 'Welcome to Navigation Bar'
+      msg: 'Welcome to Navigation Bar',
+      sdt: '2022-08-01'
+    }
+  },
+  created () {
+    var root = window.location
+    var root3 = root.origin
+    if (root.hostname === 'localhost') {
+      root3 = 'http://localhost:5000'
+    }
+    console.log(root)
+    this.$store.commit('uroot', root3)
+    console.log('curroot', root3)
+    this.$store.dispatch('userverify')
+    this.$store.dispatch('getCookie')
+  },
+  mounted () {
+    let ckie = this.$store.state.mycookies
+    if (ckie.lastSession) this.sdt = ckie.lastSession
+    this.initDate(this.sdt)
+  },
+  methods: {
+    initDate: async function (ddt) {
+      const rootURL = this.$store.state.uroot
+      console.log(rootURL, ddt)
+      const furl = rootURL + '/user/sdate?mdate=' + ddt
+      const restt = await axios.get(furl)
+      console.log(restt.data)
     }
   }
 }
