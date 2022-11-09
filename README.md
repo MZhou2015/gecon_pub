@@ -4,9 +4,11 @@ Michaelzhou
 --------------------
 error message
 --------------------
-connect.sid=s%3AUk5bSbBxnbwEQO4oyI2a70zuvpbHXxDy.2ZLlut5j%2BaBmRe3BaYsvxyMoEiNseX6AT%2FY6jbuMBHA
+connect.sid=s%3AU****************
+
 Thu, 10 Nov 2022 04:59:51 GMT
 users/sdate :webcookie: 2022-08-01
+
 /app/routes/gsapi.js:27
 
 throw err;
