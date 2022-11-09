@@ -1,6 +1,9 @@
 # gecon_pub
 Store data for public use
-michaelzhou
+Michaelzhou
+--------------------
+error message
+--------------------
 connect.sid=s%3AUk5bSbBxnbwEQO4oyI2a70zuvpbHXxDy.2ZLlut5j%2BaBmRe3BaYsvxyMoEiNseX6AT%2FY6jbuMBHA
 Thu, 10 Nov 2022 04:59:51 GMT
 users/sdate :webcookie: 2022-08-01
@@ -9,7 +12,6 @@ throw err;
 ^
 Error: read ECONNRESET
 at TCP.onStreamRead (node:internal/stream_base_commons:217:20)
---------------------
 at Protocol._enqueue (/app/node_modules/mysql/lib/protocol/Protocol.js:144:48)
 at Connection.query (/app/node_modules/mysql/lib/Connection.js:198:25)
 at /app/routes/gsapi.js:25:24
