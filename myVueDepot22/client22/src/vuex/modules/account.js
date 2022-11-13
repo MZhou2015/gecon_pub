@@ -2,10 +2,10 @@ import axios from 'axios'
 
 const state = {
   midone: '',
-  orders: {date: '2021-10-18', name: 'UFO', type: 'invs', list: []},
-  orderinfo: {isEdit: 1, odno: 101},
-  tbData: '',
-  customers: '',
+  orders: { date: '2021-10-18', name: 'UFO', type: 'invs', list: [] },
+  orderinfo: { isEdit: 1, odno: 101 },
+  tbData: 'aa',
+  customers: 'aa',
   xtledger: null,
   ledgerlist: [],
   totSales: 886,
@@ -15,17 +15,18 @@ export default {
   namespaced: true,
   state,
   getters: {
-    xtledger: (state) => {
+    xtledger: state => {
       return state.xtledger
     },
-    accSum: (state) => {
+    accSum: state => {
       return state.accSum
     }
   },
   actions: {
     async myactive (context, idx) {
       // const furl = 'http://localhost:5000/account/bankacc'
-      const fln = 'https://mzhou2015.github.io/gecon_pub/data2022/pubdata/accact2.csv'
+      const fln =
+        'https://mzhou2015.github.io/gecon_pub/data2022/pubdata/accact2.csv'
       const restt = await axios.get(fln)
       var mx = restt.data
       const myArray = mx.split(/\r\n|\n|\r/)
@@ -57,14 +58,16 @@ export default {
         case 'webacc':
           let mc = []
           mx.forEach(xv => {
-            mc.push({acc: xv.acc_no, accName: xv.acc_name})
+            mc.push({ acc: xv.acc_no, accName: xv.acc_name })
           })
           // console.log(mc)
           context.commit('tbdata', mc)
+          localStorage.setItem('accList', JSON.stringify(mc))
           console.log(mdix)
           break
         case 'customer':
           context.commit('customer', mx)
+          localStorage.setItem('acustomerList', JSON.stringify(mx))
           break
         case 'invoice':
           var md = []
@@ -86,7 +89,16 @@ export default {
     },
     async webaccApi (context, mdix) {
       const rootURL = context.rootGetters.uroot
-      const furl = rootURL + '/account/finreport?type=' + mdix.type + '&dt1=' + mdix.dt1 + '&dt2=' + mdix.dt2 + '&acc=' + mdix.acc
+      const furl =
+        rootURL +
+        '/account/finreport?type=' +
+        mdix.type +
+        '&dt1=' +
+        mdix.dt1 +
+        '&dt2=' +
+        mdix.dt2 +
+        '&acc=' +
+        mdix.acc
       console.log(furl)
       const d = new Date()
       let time = d.getTime()
@@ -97,7 +109,21 @@ export default {
       console.log(mx)
       const dx = new Date()
       let time2 = dx.getTime()
-      console.log(time2 - time)
+      console.log('time usage', time2 - time)
+      context.commit('getSum', mx)
+    },
+    async bs3Api (context, mdix) {
+      const rootURL = context.rootGetters.uroot
+      const furl = rootURL + '/account/bs3?type=' + mdix.type + '&dt1=' + mdix.dt1 + '&dt2=' + mdix.dt2 + '&acc=' + mdix.acc
+      console.log(furl)
+      const d = new Date()
+      let time = d.getTime()
+      const restt = await axios.get(furl)
+      var mx = restt.data
+      console.log(mx)
+      const dx = new Date()
+      let time2 = dx.getTime()
+      console.log('time usage', time2 - time)
       context.commit('getSum', mx)
     }
   },
@@ -130,6 +156,9 @@ export default {
         state.xtledger = []
         state.xtledger.push(mdat)
       }
+    },
+    addledger3 (state, mdat) {
+      state.xtledger = mdat
     }
   }
 }

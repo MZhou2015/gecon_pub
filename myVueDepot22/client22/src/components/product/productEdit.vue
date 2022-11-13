@@ -1,10 +1,13 @@
 <template>
-  <div class='temp_gt'>This is a test page!!</div>
+  <div class='temp_gt'>This is a test page!!
+    {{myorder}}
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'test',
+  name: 'productEdit',
+  props: ['myorder'],
   data () {
     return {
       jsdd: null

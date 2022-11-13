@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 import state from './state'
 import actions from './actions'
 import ACC from './modules/account'
+import PRO from './modules/product'
 
 Vue.use(Vuex)
 
@@ -24,7 +25,8 @@ const store = new Vuex.Store({
   },
   actions,
   modules: {
-    ACC
+    ACC,
+    PRO
   }
 })
 

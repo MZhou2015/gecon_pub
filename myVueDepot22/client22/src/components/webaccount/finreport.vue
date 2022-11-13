@@ -27,22 +27,20 @@
           <table class = "table ">  <!-- Show Bank account  activities  here    -->
             <caption><span>Balance &nbsp;&nbsp;Sheet</span> <br /> {{endDate}}</caption>
            <thead>
-           <tr>
-            <th scope="col">Assets</th><th colspan="3">&nbsp;&nbsp;</th><th scope="col">Action</th>
-           </tr>
+           <tr><th scope="col">Assets</th><th colspan="4">&nbsp;&nbsp;</th></tr>
              </thead>
              <tbody>
-             <tr v-for="(mv,idx) in bisheet.blk1" :key="'A' + idx"  class="trans" ><td>{{idx+1}}</td><td><router-link :to="'/generals/'+ mv.acc" >{{mv.acc}}</router-link></td><td class="aname">{{mv.accname}}</td>
+             <tr v-for="(mv,idx) in bisheet.blk1" :key="'A' + idx"  class="trans" ><td>{{idx+1}}</td><td><router-link :to="'/generals/'+ mv.accNo" >{{mv.accNo}}</router-link></td><td class="aname">{{mv.accname}}</td>
                 <td>{{mv.sum}}</td><td>{{mv.type}}</td></tr>
-                <tr><th>&nbsp;&nbsp;</th><th scope="col">Assets Total</th><th colspan="3">&nbsp;&nbsp;</th><th>{{bisheet.tasset}}</th></tr>
-             <tr v-for="(mv,idx) in bisheet.blk2" :key="'L' + idx"  class="trans" ><td>{{idx+1}}</td><td><router-link :to="'/generals/'+ mv.acc" >{{mv.acc}}</router-link></td><td class="aname">{{mv.accname}}</td>
+                <tr><th>&nbsp;&nbsp;</th><th scope="col">Assets Total</th><th colspan="2">&nbsp;&nbsp;</th><th>{{bisheet.tasset}}</th></tr>
+             <tr v-for="(mv,idx) in bisheet.blk2" :key="'L' + idx"  class="trans" ><td>{{idx+1}}</td><td><router-link :to="'/generals/'+ mv.accNo" >{{mv.accNo}}</router-link></td><td class="aname">{{mv.accname}}</td>
                 <td>{{mv.sum}}</td><td>{{mv.type}}</td></tr>
                 <tr><th>&nbsp;&nbsp;</th><th>Total in Liabilities:</th><th colspan="2">&nbsp;&nbsp;</th><th>{{bisheet.tliab}}</th></tr>
-              <tr v-for="(mv,idx) in bisheet.blk3" :key=idx  class="trans" ><td>{{idx+1}}</td><td><router-link :to="'/generals/'+ mv.acc" >{{mv.acc}}</router-link></td><td class="aname">{{mv.accname}}</td>
+              <tr v-for="(mv,idx) in bisheet.blk3" :key=idx  class="trans" ><td>{{idx+1}}</td><td><router-link :to="'/generals/'+ mv.accNo" >{{mv.accNo}}</router-link></td><td class="aname">{{mv.accname}}</td>
                 <td>{{mv.sum}}</td><td>{{mv.type}}</td></tr>
                 <tr><th>&nbsp;&nbsp;</th><th>Total in Equity:</th><th colspan="2">&nbsp;&nbsp;</th><th>{{bisheet.tequity}}</th></tr>
                 <tr><th>&nbsp;&nbsp;</th><th>&nbsp;</th><th colspan="2">&nbsp;&nbsp;</th><th>&nbsp;</th></tr>
-                <tr><th>&nbsp;&nbsp;</th><th>Total Liabary and Equity:</th><th colspan="2">&nbsp;&nbsp;</th><th>{{bisheet.tle}}</th></tr>
+                <tr><th>&nbsp;&nbsp;</th><th>Total Liability and Equity:</th><th colspan="2">&nbsp;&nbsp;</th><th>{{bisheet.tle}}</th></tr>
               </tbody>
            </table>
         </div> <!--    end of  Bank account list  -- -->
@@ -50,16 +48,14 @@
           <table class = "table ">  <!-- Show Income Statement   here    -->
             <caption><span>Income &nbsp;&nbsp;Statement</span> <br /> from {{fdate}} to {{endDate}}</caption>
            <thead>
-           <tr>
-            <th scope="col">#</th> <th scope="col">Date</th>  <th scope="col">description</th> <th scope="col">Debit</th>
-            <th scope="col">Credit</th>  <th scope="col">Balance</th>   <th scope="col">Action</th>
-           </tr>
+           <tr><th scope="col">Income</th><th colspan="4">&nbsp;&nbsp;</th></tr>
              </thead>
              <tbody>
-              <tr v-for="(mv,idx) in bisheet.blk4" :key="'I' + idx"   class="trans" ><td>{{idx+1}}</td><td><router-link :to="'/generals/'+ mv.acc" >{{mv.acc}}</router-link></td><td class="aname">{{mv.accname}}</td>
+               <tr v-for="(mv,idx) in bisheet.blk4" :key="'I' + idx"   class="trans" ><td>{{idx+1}}</td><td><router-link :to="'/generals/'+ mv.accNo" >{{mv.accNo}}</router-link></td><td class="aname">{{mv.accname}}</td>
                 <td>{{mv.sum}}</td><td>{{mv.type}}</td></tr>
                 <tr><th>&nbsp;&nbsp;</th><th>Total in income:</th><th colspan="2">&nbsp;&nbsp;</th><th>{{bisheet.tincome}}</th></tr>
-              <tr v-for="(mv,idx) in bisheet.blk5" :key="'E' + idx"   class="trans" ><td>{{idx+1}}</td><td><router-link :to="'/generals/'+ mv.acc" >{{mv.acc}}</router-link></td><td class="aname">{{mv.accname}}</td>
+              <tr><th scope="col">Expanse</th><th colspan="4">&nbsp;&nbsp;</th></tr>
+              <tr v-for="(mv,idx) in bisheet.blk5" :key="'E' + idx"   class="trans" ><td>{{idx+1}}</td><td><router-link :to="'/generals/'+ mv.accNo" >{{mv.accNo}}</router-link></td><td class="aname">{{mv.accname}}</td>
                 <td>{{mv.sum}}</td><td>{{mv.type}}</td></tr>
                 <tr><th>&nbsp;&nbsp;</th><th>Total in Expanse:</th><th colspan="2">&nbsp;&nbsp;</th><th>{{bisheet.texpanse}}</th></tr>
                 <tr><th>&nbsp;&nbsp;</th><th>&nbsp;&nbsp;</th><th colspan="4">&nbsp;&nbsp;</th></tr>
@@ -86,22 +82,29 @@ export default {
     }
   },
   created () {
-    let para = 'balsheet'
     let mytime = JSON.parse(localStorage.getItem('accountingDate'))
     this.fdate = mytime.dt1
     this.endDate = mytime.dt2
-    mytime.type = para
+    mytime.type = 'bs3'
     mytime.acc = 'All'
-    this.accountApi(mytime)
+    this.bs3Api(mytime)
   },
   mounted () {
     console.log(this.fdate)
+    if (this.$store.state.ACC.tbData === 'aa') {
+      let acl = JSON.parse(localStorage.getItem('accList'))
+      this.$store.commit('ACC/tbdata', acl)
+    }
+    if (this.$store.state.ACC.customers === 'aa') {
+      let acl = JSON.parse(localStorage.getItem('acustomerList'))
+      this.$store.commit('ACC/customer', acl)
+    }
   },
   computed: {
     ...mapGetters({accsummary: 'ACC/accSum'})
   },
   methods: {
-    ...mapActions({accountApi: 'ACC/webaccApi'}),
+    ...mapActions({accountApi: 'ACC/webaccApi', bs3Api: 'ACC/bs3Api'}),
     getbalance: function (mthd) {
       let totasset = 0
       let totliab = 0
@@ -113,24 +116,31 @@ export default {
       let blk3 = []
       let blk4 = []
       let blk5 = []
-      this.accsummary.forEach(element => {
-        if (Number(element.type) === 1) {
+      const bal = this.accsummary.return.inlist
+      bal.forEach(element => {
+        if (element.accNo < 19999) {
           totasset += Number(element.sum)
           blk1.push(element)
         }
-        if (element.type === 2) {
+        if (element.accNo > 19900 && element.accNo < 29999) {
           totliab += Number(element.sum)
           blk2.push(element)
         }
-        if (element.type === 3) {
+        if (element.accNo > 29999 && element.accNo < 39999) {
           totequity += Number(element.sum)
           blk3.push(element)
         }
-        if (element.type === 4) {
-          totincome += -1 * Number(element.sum)
+      })
+      const net = this.accsummary.return.netincome
+      totequity += Number(net)
+      blk3.push({accNo: 39000, sum: net})
+      const state = this.accsummary.statement.inlist
+      state.forEach(element => {
+        if (element.accNo > 39999 && element.accNo < 49999) {
+          totincome += Number(element.sum)
           blk4.push(element)
         }
-        if (element.type === 5) {
+        if (element.accNo > 49999) {
           totexpanse += Number(element.sum)
           blk5.push(element)
         }
@@ -158,7 +168,9 @@ export default {
     setting: function () {
       let ddtime = {dt1: this.fdate, dt2: this.endDate}
       localStorage.setItem('accountingDate', JSON.stringify(ddtime))
+      let param = {dt1: this.fdate, dt2: this.endDate, type: 'bs3', acc: 'All'}
       console.log('alldates', this.fdate, this.endDate)
+      this.bs3Api(param)
     },
     accApi: function () {
       console.log('alldates', this.fdate, this.endDate)

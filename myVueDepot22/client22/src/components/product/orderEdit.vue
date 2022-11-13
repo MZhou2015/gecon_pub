@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'test',
+  name: 'orderEdit',
   data () {
     return {
       jsdd: null
@@ -12,6 +12,12 @@ export default {
   },
   created () {
     // this.getCookie21('userID')
+    this.msg = window.location.hostname
+    console.log(this.msg)
+    if (this.msg === 'localhost') {
+      console.log('Run in Local')
+    }
+    this.getProdata('dfer')
   }
 }
 </script>

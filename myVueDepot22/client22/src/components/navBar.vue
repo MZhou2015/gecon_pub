@@ -1,20 +1,24 @@
 <template>
-    <div class="nav">
-       <ul>
-         <li><a href="./">DashBoard</a></li>
-         <li><router-link to="./webacc" >Webaccounting</router-link>
+  <div class="nav">
+    <ul>
+      <li><a href="./">DashBoard</a></li>
+      <li><router-link to="/webacc" >Webaccounting</router-link>
+          <ul>
+              <li><router-link to="/finreport" >Finance Report</router-link></li>
+              <li><router-link to="/generals" >General Entry</router-link></li>
+          </ul>
+        </li>
+        <li><a href="/about">Investment</a>
             <ul>
-                <li><router-link to="/finreport" >Finance Report</router-link></li>
-                <li><router-link to="/generals" >General Entry</router-link></li>
+              <li><router-link to="/statement" >Statements</router-link></li>
+              <li><router-link to="/finreport" >Finance Report</router-link></li>
             </ul>
-          </li>
-           <li><a href="/about">Investment</a>
-             <ul>
-                <li><router-link to="/statement" >Statements</router-link></li>
-                <li><router-link to="/finreport" >Finance Report</router-link></li>
+        </li>
+        <li><router-link to="/orderlist" >Sales</router-link>
+          <ul>
+              <li><router-link to="/product" >Product</router-link></li>
               </ul>
-          </li>
-          <li><router-link to="/orderlist" >Sales</router-link></li>
+        </li>
           <li><a href="/about">Logout</a></li>
        </ul>
   </div>

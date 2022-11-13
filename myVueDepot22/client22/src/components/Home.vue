@@ -29,6 +29,7 @@
 
 <script>
 // import {mapGetters, mapActions} from 'vuex'
+import axios from 'axios'
 
 export default {
   name: 'Gtlhome',
@@ -63,12 +64,11 @@ export default {
     async getProdata (react) {
       // const headers = { 'Content-Type': 'application/json' }
       const rootUrl = this.$store.state.uroot
-      const furl = rootUrl + '/gsapi/data'
+      const furl = rootUrl + '/db/api'
       const d = new Date()
       let time = d.getTime()
-      await fetch(furl, {'Content-Type': 'application/json'})
-        .then(response => response.json())
-        .then(data => { this.products = data })
+      const result = await axios.get(furl)
+      this.products = result.data
       const dx = new Date()
       let time2 = dx.getTime()
       console.log('time usage', time2 - time)

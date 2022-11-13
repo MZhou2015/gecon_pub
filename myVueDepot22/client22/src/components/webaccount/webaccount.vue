@@ -90,7 +90,6 @@ export default {
     this.accData('customer') // get user/customer list
     this.accData('invoice') // get sales or purchase invoice
     this.accData('ledger') // get general Ledgers
-    console.log(this.$store.state.ACC.orders)
   },
   methods: {
     ...mapActions({accData: 'ACC/webaccounts'}),
