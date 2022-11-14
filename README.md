@@ -1,7 +1,6 @@
-# gecon_pub
-Store data for public use
-Michaelzhou
---------------------
+## gecon_pub
+### Store data for public use
+### Michaelzhou
 error message
 --------------------
 connect.sid=s%3AU****************
