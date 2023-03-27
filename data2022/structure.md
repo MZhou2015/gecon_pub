@@ -1,18 +1,18 @@
 +---------------+
 |   Dashboard   |
----
+| --- |
 +---------------+ ---
 ---
-+--------------+--------------+
+
 |         Company            |
-+----------------------------+
+
 -                            |
 | - Employee Management      |
 | - Customer Management      |
 | - Sales Management         |
 | - Inventory Tracking       |
 |                            |
-+----------------------------+
+
 ---       |
 +--------------+--------------+
 |       Investment           |
@@ -29,7 +29,7 @@
 +--------------+
 |  Bookkeeping |
 +--------------+
----
+| --- |
 |              |
 | - Accounting |
 | - Invoicing  |
