@@ -1,41 +1,34 @@
 +---------------+
 |   Dashboard   |
 | --- |
-+---------------+ ---
----
-
 |         Company            |
 
--                            |
+| ---         |
 | - Employee Management      |
 | - Customer Management      |
 | - Sales Management         |
 | - Inventory Tracking       |
 |                            |
 
----       |
-+--------------+--------------+
+| ---       |
+
 |       Investment           |
-+----------------------------+
-|                            |
+|---                  |
 | - Investment Tracking      |
 | - Portfolio Management     |
 | - Risk Assessment          |
 | - Investment Analysis      |
 |                            |
-+----------------------------+
+
         |
 ---
-+--------------+
 |  Bookkeeping |
-+--------------+
 | --- |
 |              |
 | - Accounting |
 | - Invoicing  |
 | - Payments   |
 |              |
-+--------------+
 ----------
 # 内容管理Web App 思路图
 ## 前端
