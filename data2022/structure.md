@@ -2,8 +2,7 @@
 |   Dashboard   |
 | --- |
 |         Company            |
-
-| ---         |
+| ---    |
 | - Employee Management      |
 | - Customer Management      |
 | - Sales Management         |
@@ -18,7 +17,6 @@
         |
 |  Bookkeeping |
 | --- |
-|              |
 | - Accounting |
 | - Invoicing  |
 | - Payments   |
