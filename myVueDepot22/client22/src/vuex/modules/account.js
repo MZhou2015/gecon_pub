@@ -50,7 +50,6 @@ export default {
     },
     async webaccounts (context, mdix) {
       const rootURL = context.rootGetters.uroot
-      console.log(rootURL)
       const furl = rootURL + '/account/bankacc?type=' + mdix
       const restt = await axios.get(furl)
       var mx = restt.data

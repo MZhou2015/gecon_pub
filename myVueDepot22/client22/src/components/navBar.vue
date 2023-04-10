@@ -4,19 +4,21 @@
       <li><a href="./">DashBoard</a></li>
       <li><router-link to="/webacc" >Webaccounting</router-link>
           <ul>
-              <li><router-link to="/finreport" >Finance Report</router-link></li>
-              <li><router-link to="/generals" >General Entry</router-link></li>
+            <li><router-link to="/generals" >General Entry</router-link></li>
+            <li><router-link to="/finreport" >Finance Report</router-link></li>
           </ul>
         </li>
-        <li><a href="/about">Investment</a>
+        <li><router-link to="/investmain">Investment</router-link>
             <ul>
-              <li><router-link to="/statement" >Statements</router-link></li>
+              <li><router-link to="/investbal">Invest Bal</router-link></li>
               <li><router-link to="/finreport" >Finance Report</router-link></li>
             </ul>
         </li>
         <li><router-link to="/orderlist" >Sales</router-link>
           <ul>
               <li><router-link to="/product" >Product</router-link></li>
+              <li><router-link to="/orderenter" >Order Entry</router-link></li>
+              <li><router-link to="/user" >User</router-link></li>
               </ul>
         </li>
           <li><a href="/about">Logout</a></li>
@@ -26,6 +28,7 @@
 
 <script>
 import axios from 'axios'
+import {mapActions} from 'vuex'
 
 export default {
   name: 'navBar',
@@ -46,6 +49,7 @@ export default {
     console.log('curroot', root3)
     this.$store.dispatch('userverify')
     this.$store.dispatch('getCookie')
+    this.getxrate('usdcad')
   },
   mounted () {
     let ckie = this.$store.state.mycookies
@@ -53,6 +57,7 @@ export default {
     this.initDate(this.sdt)
   },
   methods: {
+    ...mapActions({getxrate: 'xrate'}),
     initDate: async function (ddt) {
       const rootURL = this.$store.state.uroot
       console.log(rootURL, ddt)

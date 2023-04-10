@@ -1,12 +1,13 @@
 /*****************    General CSS   for all templete     *******************/
-.template{
-color: #121252;
-font-weight: 600;
+.temp_gt {
+  color: rgb(190, 99, 46);
+  padding-bottom: 28px;
+  margin-bottom: 12px;
 }
-.template caption {
-    caption-side: top;
-    text-align: center;
-  }
+div.webacc { 
+ padding-bottom: 28px;
+ }
+
 /****************************************************/  
 .myclass1 {
     color: red;
@@ -29,6 +30,7 @@ body {
     position: relative;
     min-height: 100vh;
     }
+ /**   
  .nav-tabs .nav-link{
      background-color: #dbdbc7;
      margin-right: 3px;
@@ -75,6 +77,3 @@ table.tgc1 th {
    }
    /*********  global CSS      **/
    table.vbl { width: 100%; background-color: rgb(203, 211, 211); }
-.sd1{ width: 100%; margin-left: 0px; background-color: #cfc3b6;}
-.sd1 td{padding: 6px; font-size: 14px;font-weight: 550;}
-.esd{background-color: #cfc3da; }

@@ -85,6 +85,7 @@ export default {
     }
   },
   mounted () {
+    this.random()
     this.$store.dispatch('ACC/myactive') // Get bank account activities
     this.accData('webacc') // get web account list
     this.accData('customer') // get user/customer list
@@ -92,7 +93,7 @@ export default {
     this.accData('ledger') // get general Ledgers
   },
   methods: {
-    ...mapActions({accData: 'ACC/webaccounts'}),
+    ...mapActions({accData: 'ACC/webaccounts', random: 'randNum'}),
     ...mapMutations({addledger: 'ACC/addledger'}),
     btnEntry: function (item) {
       this.ge = 1

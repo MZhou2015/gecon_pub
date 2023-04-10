@@ -1,21 +1,16 @@
 <template>
   <div class="temp_gt">
-    Hello
-  <div class="container bg-light">
-    <div class="row box2" >
-       <div class="col-6 border bg-light p-3 text-danger" >Testing here </div>
-       <div class="col-6">
-        <button type="button" class="btn btn-primary btn-sm" @click="goRouter">Log in </button>
-       </div>
-    </div>
-    <div class ="box1">
+    <div class="container bg-light">
+      <div class ="box1">
       <div v-for="(mv,index) in products" :key=index >{{mv}}</div>
       <div class="col border bg-light p-5">
-        <h3 > Hi,  !</h3>
+        <h3 > Hi,</h3>
         <h3 >You are not logged in yet !</h3>
+        Math Random: {{$store.state.a}} <br/>
+        xchange Rate: {{$store.state.xrate}}
       </div>
-      <div class="row" >
-        {{$store.state.mycookies}}
+      <div class="row homed" >
+       <h5> {{$store.state.mycookies}}</h5>
       </div>
     </div>
     <div>
@@ -35,7 +30,8 @@ export default {
   name: 'Gtlhome',
   data () {
     return {
-      products: ''
+      products: '',
+      rnd: ''
     }
   },
   created () {
@@ -45,7 +41,7 @@ export default {
     if (this.msg === 'localhost') {
       console.log('Run in Local')
     }
-    this.getProdata('dfer')
+    this.$store.dispatch('randNum')
   },
   computed: {
     // ...mapGetters(['user', 'xs'])
@@ -88,5 +84,9 @@ export default {
 }
 .box2{
   background-color: #a9caf0;
+}
+.homed{
+  padding: 8px  18px;
+   background-color: #a9cad0;
 }
 </style>

@@ -55,7 +55,8 @@ export default {
   mounted () {
     this.xledger = this.ledgers
     let ckie = this.$store.state.mycookies
-    if (ckie.lastSession) this.ltt.date = ckie.lastSession
+    if (ckie.lastSession) this.ltt.date = ckie.lastSession // get default date from cookie
+    this.ltt.refer = this.$store.state.a.a
   },
   computed: {
     ...mapGetters({mledger: 'ACC/xtledger'}),

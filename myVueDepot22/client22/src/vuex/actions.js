@@ -21,7 +21,6 @@ export default {
       let val = arr[1]
       mck[key] = val
     })
-    console.log(mck)
     context.commit('cookies', mck)
   },
   async userverify (context, dx) {
@@ -31,5 +30,21 @@ export default {
     const furl = rootURL + '/user/verify'
     const restt = await axios.get(furl)
     console.log(restt.data)
+  },
+  randNum (context) {
+    let r = Math.floor(Math.random() * 25)
+    let s = Math.floor(Math.random() * 9)
+    let char = String.fromCharCode(65 + r, 97 + s)
+    let char2 = String.fromCharCode(107 + s)
+    let b = char + r + char2 + s
+    let refNo = {a: b, ref: 35000 + r * 13 + s * 106}
+    context.commit('aRandom', refNo)
+  },
+  async xrate (context, sy) {
+    const rootURL = context.getters.uroot
+    const furl = rootURL + '/axios/xe'
+    const restt = await axios.get(furl)
+    console.log(restt.data)
+    context.commit('upxrate', restt.data)
   }
 }

@@ -4,7 +4,8 @@
           <caption>{{mapp}}</caption>
             <thead>
               <tr><th>Item</th><th >Order_No</th><th >Customer</th> <th>Invoice No.</th><th>Amount</th><th>Date</th></tr>
-              <tr v-for=" (mv,idx) in marx" :key=idx ><td>{{idx+1}}</td><td>{{mv.order_no}}</td><td>{{mv.company}}</td>
+              <tr v-for=" (mv,idx) in marx" :key=idx ><td>{{idx+1}}</td><td><router-link :to="'/order/'+ mv.order_no" >{{mv.order_no}}</router-link></td>
+              <td>{{mv.company}}</td>
               <td>{{mv.reference}}</td><td>{{mv.amount}}</td><td>{{mv.date}}</td></tr>
             </thead>
        </table>

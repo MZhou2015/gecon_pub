@@ -106,8 +106,12 @@ export default {
       this.swl = 3
       let tit = this.acclist[0]
       this.transf = {acc: 30200, refer: tit.referance, date: tit.date, cid: tit.cid}
-      this.$store.commit('ACC/addledger3', this.acclist)
-      console.log(this.acclist)
+      let alst = this.acclist
+      alst.forEach(element => {
+        element.acc = element.acc_no
+      })
+      this.$store.commit('ACC/addledger3', alst)
+      console.log(alst)
     }
   }
 }

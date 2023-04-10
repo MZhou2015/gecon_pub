@@ -13,8 +13,7 @@
 
 <script>
 export default {
-  name: 'producttable',
-  props: ['malx', 'chkItem'],
+  name: 'orderEnter',
   data () {
     return {
       jsdd: null
@@ -33,49 +32,5 @@ export default {
 
 <!-- Add'scoped' attribute to limit CSS to this component only -->
 <style scoped>
-caption {
-  caption-side: top;
-  text-align: center;
-  font-size: 16px;
-  padding: 3px;
-  margin-bottom: 0px;
-  color: #626247;
-  font-weight: 550;
-  background-color: #e4d86f;
-  opacity: .8;
-}
-table {
-  width: 100%;
-  text-align: right;
-  padding: 8px;
-}
-th{
-  background-color: #cdcdaa ;
-  color:#282882;
-  padding-right: 30px;
-}
-td {
-  padding: 2px 8px;
-  padding-right: 20px;
-}
-td:first-child,
-th:first-child {
-  width: 5%;
-}
-td:nth-child(2),
-th:nth-child(2) {
-  width: 5%;
-}
-td:nth-child(3),
-th:nth-child(3) {
-  width: 10%;
-}
-td:nth-child(4),
-th:nth-child(4) {
-  width: 35%;
-}
-td:nth-child(5),
-th:nth-child(5) {
-  width: 25%;
-}
+
 </style>
