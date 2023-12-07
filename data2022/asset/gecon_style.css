@@ -26,7 +26,28 @@ html,body{
   .main{
       flex-grow: 1;
   }
-  /*******************************************************/
+  div.container{
+    background-color: #7fa8e6;
+    display: flex;
+    flex-wrap: wrap;
+    
+   }
+   div.pitem{width:450px; background-color: #968870;
+        flex-grow: 0;
+        margin-left: 5px;
+        margin-top: 10px;
+        text-align:left;
+        padding: 6px 5px;
+       }
+   .product_img  {
+       background-color: #a9afb8;
+       width: 95%;
+       text-align: center;
+       }
+   .product_img img {
+     width: 90%;
+    } 
+  /***      css above for gecon Technology page  ********/
   /***   CSS for BookMark                              **/
   /******************************************************/
   .aa2 {
