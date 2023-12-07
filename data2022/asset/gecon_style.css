@@ -91,7 +91,7 @@ html,body{
    div.submk{
      background-color: #e7e4c8;
      padding: 6px;
-     width: 515px;
+     width: 510px;
      margin-top: 10px;
      margin-left: 8px;
    }
@@ -103,4 +103,6 @@ html,body{
     font-size: 22px;
     font-weight: 800;
    }
+   table.tp5 td a:link ,a:visited {color: rgb(64, 64, 184);text-decoration: none; font-weight: bold;}
+   table.tp5 td a:hover ,a:active {color: rgb(190, 138, 69); text-decoration: none; font-weight: bold;}
    /****************************************************/
