@@ -9,7 +9,7 @@ html,body{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #fe5656;    
+  background-color: #e0ddc9;    
   }
   .banner{
    display: flex;   
@@ -94,5 +94,13 @@ html,body{
      width: 515px;
      margin-top: 10px;
      margin-left: 8px;
+   }
+   div.top50{
+    width: 100%;
+   }
+   table.tp5 {
+    width: 100%;
+    font-size: 22px;
+    font-weight: 800;
    }
    /****************************************************/
