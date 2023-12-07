@@ -72,6 +72,7 @@ html,body{
      padding: 3px;
      margin: 2px;
    }
+   .xta a:hover ,a:active {color: rgb(224, 117, 68); text-decoration: none; font-weight: 400;}
    /*******************************************************/
    div.bmk_baner {background-color: #ff6666; text-align: center; padding: 5px; font-size: 26px; color: #ffffff;}
    div#main {position:relative; background-color: #aaaaff; 
@@ -97,11 +98,15 @@ html,body{
    }
    div.top50{
     width: 100%;
+    padding-right: 12px;
    }
    table.tp5 {
     width: 100%;
     font-size: 22px;
     font-weight: 800;
+   }
+   table.tp5 td {
+    padding-right:8px ;
    }
    table.tp5 td a:link ,a:visited {color: rgb(64, 64, 184);text-decoration: none; font-weight: bold;}
    table.tp5 td a:hover ,a:active {color: rgb(190, 138, 69); text-decoration: none; font-weight: bold;}
