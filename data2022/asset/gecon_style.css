@@ -76,7 +76,7 @@ html,body{
    /*******************************************************/
    div.bmk_baner {background-color: #ff6666; text-align: center; padding: 5px; font-size: 26px; color: #ffffff;}
    div#main {position:relative; background-color: #aaaaff; 
-     width: 84%;
+     width: 86%;
      margin-left: 8%;
      flex-grow: 1;
    }
