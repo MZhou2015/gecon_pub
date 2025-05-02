@@ -1,3 +1,20 @@
 trans_no,asset_id,symbol,quantity,price,amount,act,account_id,accName,comment,time,act_group
-1745452803,10209,HBM.TO,100.00,10.3399,1033.99,buy,80212,TD CAD TSFA  ZHOU,Trade,1745452800,trade
-1745366404,10205,BTCC.TO,200.00,16.88995,3377.99,buy,80212,TD CAD TSFA  ZHOU,Trade,1745366400,trade
+1738543999,10320,BTC,0.01,96546.2,965.462,sell,80220,Kraken Exchanger,Trade Crypto,1738543985,trade
+1738544000,10202,USD,965.462,1,965.462,cashin,80220,Kraken Exchanger,Trade Crypto,1738543985,cashflow
+1738649563,10508,SUI,0.5,1008.9186,504.4593,transferout,80220,Kraken Exchanger,transfer out Sui,1738649547,transfer
+1742971787,10202,USD,504.4593,1,504.4593,cashout,80220,Kraken Exchanger,Trade Crypto,1742971770,cashflow
+1742971788,10508,SUI,200,2.5222965,504.4593,buy,80220,Kraken Exchanger,Trade Crypto,1742971770,trade
+1743080267,10202,USD,543.48,1,543.48,cashout,80220,Kraken Exchanger,Trade Crypto,1743080248,cashflow
+1743080268,10508,SUI,200,2.7174,543.48,buy,80220,Kraken Exchanger,Trade Crypto,1743080248,trade
+1743434431,10202,USD,416,1,583.7457,cashout,80220,Kraken Exchanger,Trade Crypto,1743434410,cashflow
+1743434432,10523,LTC,7,83.39224286,583.7457,buy,80220,Kraken Exchanger,Trade Crypto,1743434410,trade
+1743524810,10202,USD,495.2,1,495.2,cashout,80220,Kraken Exchanger,Trade Crypto,1743524787,cashflow
+1743524811,10508,SUI,200,2.476,495.2,buy,80220,Kraken Exchanger,Trade Crypto,1743524787,trade
+1745343344,10202,USD,911.751,1,911.751,cashout,80220,Kraken Exchanger,Trade Crypto,1745343319,cashflow
+1745343345,10320,BTC,0.01,91175.1,911.751,buy,80220,Kraken Exchanger,Trade Crypto,1745343319,trade
+1745415081,10202,USD,459.7882,1,459.7882,cashout,80220,Kraken Exchanger,Trade Crypto,1745415054,cashflow
+1745415082,10505,SOL,3,153.2627333,459.7882,buy,80220,Kraken Exchanger,Trade Crypto,1745415054,trade
+1745415230,10202,USD,18.0535,1,18.0535,cashout,80220,Kraken Exchanger,Trade Crypto,1745415201,cashflow
+1745415231,10325,BCH,0.05,361.07,18.0535,buy,80220,Kraken Exchanger,Trade Crypto,1745415201,trade
+1745508310,10202,USD,649.6092,1,649.6092,cashout,80220,Kraken Exchanger,Trade Crypto,1745508279,cashflow
+1745508311,10508,SUI,197.753,3.284952441,649.6092,buy,80220,Kraken Exchanger,Trade Crypto,1745508279,trade
