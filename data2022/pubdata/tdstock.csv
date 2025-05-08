@@ -1,0 +1,6 @@
+trans_no,asset_id,symbol,quantity,price,amount,act,account_id,accName,comment,time,act_group
+1738543999,10320,BTC,0.01,96546.2,965.462,sell,80220,Kraken Exchanger,Trade Crypto,1738543985,trade
+1738544000,10202,USD,965.462,1,965.462,cashin,80220,Kraken Exchanger,Trade Crypto,1738543985,cashflow
+1738649563,10508,SUI,0.5,1008.9186,504.4593,transferout,80220,Kraken Exchanger,transfer out Sui,1738649547,transfer
+1742971787,10202,USD,504.4593,1,504.4593,cashout,80220,Kraken Exchanger,Trade Crypto,1742971770,cashflow
+1742971788,10508,SUI,200,2.5222965,504.4593,buy,80220,Kraken Exchanger,Trade Crypto,1742971770,trade
